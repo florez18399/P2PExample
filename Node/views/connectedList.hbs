@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <p> Tu estado en la red </p>
+        <strong style="margin-left: 10px;"> {{status}} </strong>
+        <form action="/connect" method="GET" style="margin-left: 30px;">
+            <input type="submit" class="btn btn-success" value="Conectarme"></button>
+        </form>
+    </div>
+    </br>
+    {{#if hostsList}}
+    <div class="row" style="display: flex; flex-direction: column; flex-wrap: wrap; text-align: center;">
+        {{#each hostsList}}
+        <div class="d-flex p-2">
+            <table>
+                <tr>
+                    <p>{{this}}</p>
+                </tr>
+                <tr><a href="{{this}}/getImage">Ver imagen</a></tr>
+            </table>
+        </div>
+        {{/each}}
+    </div>
+    {{else}}
+    <h1>No estás conectado o no hay otros usuarios conectados</h1>
+    {{/if}}
+</div>
